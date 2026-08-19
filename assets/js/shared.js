@@ -350,6 +350,49 @@ function Marquee({ items }) {
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-33.333%); } }
       `));
 }
+const WA_NUMBER = "918885349267";
+const WA_MESSAGE = "Hello, I would like to know more about your services.";
+function WhatsAppFloat() {
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(
+    "a",
+    {
+      href: `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`,
+      target: "_blank",
+      rel: "noopener noreferrer",
+      className: "wa-float hover-zone",
+      "aria-label": "Chat with Pawpad on WhatsApp"
+    },
+    /* @__PURE__ */ React.createElement("img", { src: "assets/img/whatsapp-paw.png", alt: "Chat with Pawpad on WhatsApp", draggable: "false" }),
+    /* @__PURE__ */ React.createElement("span", { className: "wa-tip desktop-only" }, "Chat on WhatsApp")
+  ), /* @__PURE__ */ React.createElement("style", null, `
+        .wa-float {
+          position: fixed;
+          right: clamp(16px, 3vw, 28px);
+          bottom: calc(clamp(16px, 3vw, 28px) + env(safe-area-inset-bottom, 0px));
+          z-index: 40;
+          width: 68px; height: 68px;
+          display: inline-flex; align-items: center; justify-content: center;
+          transition: transform var(--t-fast) var(--ease);
+        }
+        .wa-float:hover {
+          transform: translateY(-3px);
+        }
+        .wa-float img { width: 100%; height: 100%; object-fit: contain; display: block; -webkit-user-drag: none; }
+        .wa-tip {
+          position: absolute; right: calc(100% + 12px); top: 50%;
+          transform: translateY(-50%) translateX(6px);
+          background: var(--ink); color: var(--cream-bg);
+          padding: 8px 14px; border-radius: 999px;
+          font-family: var(--f-body); font-size: 13px; font-weight: 600; white-space: nowrap;
+          opacity: 0; pointer-events: none;
+          transition: opacity var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+        }
+        .wa-float:hover .wa-tip { opacity: 1; transform: translateY(-50%) translateX(0); }
+        @media (max-width: 700px) {
+          .wa-float { width: 56px; height: 56px; }
+        }
+      `));
+}
 Object.assign(window, {
   PawIcon,
   Arrow,
@@ -361,5 +404,6 @@ Object.assign(window, {
   Footer,
   Testimonials,
   Marquee,
-  NAV_ITEMS
+  NAV_ITEMS,
+  WhatsAppFloat
 });
