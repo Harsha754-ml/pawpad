@@ -197,7 +197,7 @@ function CourseCards({ onBook }) {
           display: inline-flex; align-items: center; gap: 8px; color: var(--ink);
         }
         .g-pkg-arrow {
-          font-family: var(--f-display); font-size: 22px;
+          font-family: var(--f-body); font-size: 16px; font-weight: 600;
           width: 26px; height: 26px; background: var(--champagne);
           border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; line-height: 1;
         }
